@@ -1,0 +1,12 @@
+title: Andrew Wang
+logo: /assets/img/pfp2.jpeg
+description: PhD student @ JHU CLSP
+repository: andrewwnlp/andrewwnlp.github.io
+show_downloads: true
+google_analytics:
+theme: jekyll-theme-minimal
+exclude: ['temp']
+github:
+  is_user_page: true
+  is_project_page: false
+  cv_url: ""
