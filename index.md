@@ -18,7 +18,7 @@ ICML, 2025
 
 * **[RATIONALYST: Pre-training Process-Supervision for Improving Reasoning](https://arxiv.org/abs/2410.01044)**  
 Dongwei Jiang, Guoxuan Wang, Yining Lu, _Andrew Wang_, Jingyu Zhang, Chuyu Liu, Benjamin Van Durme, Daniel Khashabi.   
-Arxiv preprint, 2024
+ACL (main), 2025
 
 * **[AnaloBench: Benchmarking the Identification of Abstract and Long-context Analogies](https://arxiv.org/abs/2402.12370)**  
 Xiao Ye,\* _Andrew Wang_,\* Jacob Choi, Yining Lu, Shreya Sharma, Lingfeng Shen, Vijay Tiyyala, Nicholas Andrews, Daniel Khashabi.  
