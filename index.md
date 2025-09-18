@@ -8,9 +8,13 @@ Currently interested in agent memory, reasoning, and lifelong learning.
 
 # Papers
 
-* **[Hell or High Water: Can Language Model Agents Formulate Backup Plans?](https://www.cs.jhu.edu/~noa/papers/HoHW.pdf)**  
+* **[Hell or High Water: Evaluating Agentic Recovery from External Failures](https://arxiv.org/abs/2508.11027)**  
 _Andrew Wang_, Sophia Hager, Adi Asija, Daniel Khashabi, Nicholas Andrews.  
-Preprint, 2025
+COLM, 2025
+
+* **[Feedback Friction: LLMs Struggle to Fully Incorporate External Feedback](https://arxiv.org/abs/2506.11930)**  
+Dongwei Jiang, Alvin Zhang, _Andrew Wang_, Nicholas Andrews, Daniel Khashabi.  
+NeurIPS, 2025
 
 * **[Learning Extrapolative Sequence Transformations from Markov Chains](https://openreview.net/forum?id=DQfHkEcUqV)**  
 Sophia Hager, Aleem Khan, _Andrew Wang_, Nicholas Andrews.  
@@ -43,6 +47,6 @@ AnaloBench: Benchmarking the Identification of Abstract and Long-context Analogi
 Can Authorship Representation Learning Capture Stylistic Features?
 
 
-_Updated 2025/05/01_  
+_Updated 2025/09/18_  
 
 
