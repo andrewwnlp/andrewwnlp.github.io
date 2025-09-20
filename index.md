@@ -4,7 +4,7 @@ layout: default
 ---
 
 # Research
-Currently interested in agent memory, reasoning, and lifelong learning.
+Currently interested in LLM agent memory for long/infinite-horizon tasks, continual learning, and long-context reasoning.  
 
 # Papers
 
@@ -47,6 +47,6 @@ AnaloBench: Benchmarking the Identification of Abstract and Long-context Analogi
 Can Authorship Representation Learning Capture Stylistic Features?
 
 
-_Updated 2025/09/18_  
+_Updated 2025/09/20_  
 
 
