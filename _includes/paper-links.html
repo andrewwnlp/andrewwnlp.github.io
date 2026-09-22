@@ -1,0 +1,13 @@
+{%- comment -%}
+Link row for one paper, used by both the "Selected work" and "Papers" lists
+so the two can never drift apart. Expects `paper` to be in scope, which it
+is inside either loop over site.data.papers. "paper" always renders and
+points at url:; the rest appear only when that key is set on the entry.
+{%- endcomment -%}
+<p class="plinks">
+  <a href="{{ paper.url }}">paper</a>
+  {%- if paper.site %}<span class="sep">·</span><a href="{{ paper.site }}">site</a>{% endif -%}
+  {%- if paper.code %}<span class="sep">·</span><a href="{{ paper.code }}">code</a>{% endif -%}
+  {%- if paper.data %}<span class="sep">·</span><a href="{{ paper.data }}">data</a>{% endif -%}
+  {%- if paper.tweet %}<span class="sep">·</span><a href="{{ paper.tweet }}">tweet</a>{% endif -%}
+</p>

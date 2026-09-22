@@ -1,0 +1,271 @@
+/* Andrew Wang — personal site
+   Single stylesheet. No framework, no preprocessor. */
+
+:root {
+  --bg:          #ffffff;
+
+  /* Tonal scale, darkest to lightest. Hierarchy comes from these four, not
+     from size alone: titles sit above author lines, which sit above metadata. */
+  --fg-strong:   #23211e;   /* name, section headings, paper titles */
+  --fg:          #3b3835;   /* running prose: research blurb, bio */
+  --fg-soft:     #56524d;   /* author and venue lines */
+  --fg-muted:    #787269;   /* affiliation, updated date */
+
+  --link:        #1a5fb4;
+
+  --font-head: "EB Garamond", Georgia, "Times New Roman", serif;
+  --font-body: Georgia, "Times New Roman", serif;
+  /* Swap SC for TC, JP or KR to match the script you use. The local
+     "Noto Serif CJK" names catch systems that already ship it. */
+  --font-cjk:  "Noto Serif SC", "Noto Serif CJK SC", "Noto Serif CJK TC",
+               "Noto Serif CJK JP", serif;
+
+  --measure:   900px;
+  --photo:     220px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  padding: 3.5rem 1rem 5rem;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.wrapper {
+  max-width: var(--measure);
+  margin: 0 auto;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover { text-decoration: underline; }
+
+
+/* ── Masthead: name spans the full measure ─────────────────────── */
+
+.masthead { margin-bottom: 2.25rem; }
+
+
+/* ── Header band: photo column + prose column ──────────────────── */
+
+.intro {
+  display: grid;
+  grid-template-columns: var(--photo) 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  margin-bottom: 3.5rem;
+}
+
+.intro-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+.intro-text > :first-child { margin-top: 0; }
+.intro-text > :last-child  { margin-bottom: 0; }
+
+.name {
+  margin: 0;
+  color: var(--fg-strong);
+  font-family: var(--font-head);
+  font-size: 3.25rem;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+}
+
+.affiliation {
+  margin: 0.4rem 0 0;
+  color: var(--fg-muted);
+  font-size: 1rem;
+}
+
+/* Optional second form of the name, beside the masthead title. */
+
+.alias {
+  margin-left: 0.45em;
+  color: var(--fg-strong);
+  font-family: var(--font-cjk);
+  /* CJK glyphs sit optically larger than Latin at equal point size, so a
+     touch under 1em reads as the same weight as the name beside it. */
+  font-size: 0.85em;
+  font-weight: 600;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+
+/* Bare monochrome marks, centred under the photo. No chrome — but each
+   keeps a 40px hit area. */
+
+.links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem;
+  margin: 0.75rem 0 0;
+  padding: 0;
+}
+
+.links a {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  color: var(--fg-soft);
+  transition: color 0.12s ease;
+}
+
+.links a:hover { color: var(--fg-strong); }
+
+.links a:focus-visible {
+  outline: 2px solid var(--fg-strong);
+  outline-offset: -4px;
+  border-radius: 4px;
+}
+
+.links svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.bio { margin: 0; }
+
+.bio + .bio { margin-top: 1rem; }
+
+
+/* ── Content: full width below the band ────────────────────────── */
+
+.content h1 {
+  margin: 3.5rem 0 1.5rem;
+  color: var(--fg-strong);
+  font-family: var(--font-head);
+  font-size: 2.25rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.content > :first-child { margin-top: 0; }
+
+.content ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Author and venue lines recede; the title carries the entry. */
+.content li {
+  margin-bottom: 1.5rem;
+  color: var(--fg-soft);
+}
+
+.content li strong {
+  color: var(--fg-strong);
+  font-weight: 600;
+}
+
+/* Selected work: thumbnail beside title, blurb and citation. */
+
+.selected li {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  margin-bottom: 2.75rem;
+}
+
+.paper-thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.paper-thumb.is-empty { background: #f1eeea; }
+
+.blurb {
+  margin: 0.7rem 0 0;
+  color: var(--fg);
+}
+
+
+/* Full list: two lines an entry, metadata set back. */
+
+.citations li { margin-bottom: 1.1rem; }
+
+.cite-meta {
+  color: var(--fg-muted);
+  font-size: 0.9375rem;
+}
+
+
+/* Per-paper links. Its own line, so every row starts at the same left edge,
+   and the only blue on the entry now that titles are plain. Position and
+   colour carry the affordance; the separator is the only punctuation. */
+
+.plinks {
+  margin: 0.4rem 0 0;
+  font-size: 0.9375rem;
+}
+
+.plinks a { white-space: nowrap; }
+
+.plinks .sep {
+  color: var(--fg-muted);
+  margin: 0 0.45em;
+}
+
+.footnote {
+  margin-top: 1.75rem;
+  color: var(--fg-muted);
+  font-size: 0.9375rem;
+}
+
+
+/* The trailing "Updated ..." line. */
+.content > p:last-child {
+  margin-top: 2.5rem;
+  color: var(--fg-muted);
+  font-size: 0.9375rem;
+}
+
+
+/* ── Stacked layout ────────────────────────────────────────────── */
+
+@media (max-width: 700px) {
+  body { padding: 2rem 1rem 3rem; }
+
+  .intro {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  /* Size the column, not the image: the photo fills it and the icon row
+     centres inside it, so the two stay aligned once stacked. */
+  .intro-aside { width: 180px; }
+
+  .masthead { margin-bottom: 1.75rem; }
+
+  .name { font-size: 2.375rem; }
+
+  .content h1 { margin-top: 2.75rem; font-size: 1.875rem; }
+
+  .selected li { grid-template-columns: 1fr; gap: 0.9rem; }
+
+  .paper-thumb { max-width: 220px; }
+}
