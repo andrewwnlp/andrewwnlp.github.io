@@ -11,9 +11,11 @@
 
 name: Deploy site
 
+# Build on every branch so a push is a real check of the site; only main
+# is allowed to publish. That makes `git push dev` a staging gate that needs
+# no local Ruby.
 on:
   push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -22,8 +24,9 @@ permissions:
   id-token: write
 
 # Never let two deploys race; a queued one supersedes an in-flight one.
+# Per-branch, so a dev build never cancels a main deploy.
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -47,6 +50,7 @@ jobs:
 
   deploy:
     needs: build
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
