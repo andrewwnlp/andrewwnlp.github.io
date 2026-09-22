@@ -1,0 +1,111 @@
+# One entry per paper, newest first. This is the single source for both the
+# "Selected work" section and the full list below it.
+#
+# Required on every entry:
+#   title:           -> plain text; rendered bold and dark, not itself a link
+#   url:             -> landing page, not a PDF (arXiv /abs, OpenReview, publisher)
+#   authors:         -> HTML; <em>Andrew Wang</em> for me, * for equal contribution
+#   venue:           -> "COLM", "NeurIPS", "ACL (main)", "TACL", "Arxiv preprint"
+#   year:            -> four-digit number
+#
+# Optional:
+#   selected: true   -> also appears up top, with its blurb and thumbnail
+#   blurb:           -> two sentences; only used in the selected section
+#   thumb:           -> file in assets/img/papers/; omit for a plain placeholder
+#   site:            -> project page
+#   code:            -> repository
+#   data:            -> dataset or model weights, if hosted apart from the code
+#   tweet:           -> thread announcing the paper
+#
+# Each entry renders a link row: "paper" (pointing at url:) followed by
+# whichever of site / code / data / tweet are present, in that order.
+# To omit any optional key, delete it or leave its value blank -- but never
+# write thumb: "" or code: "". Liquid treats only false and nil as falsy, so
+# an empty string still renders: a dead link, or an <img> with no filename.
+
+- title: "Better, Faster, Stronger: Programmatic Skill Learning Best Reduces Agent Cost"
+  url: "https://arxiv.org/abs/2608.11338"
+  authors: "Zixi Huang,* Xiheng Wang,* <em>Andrew Wang</em>*, William Jurayj, Bernal Jiménez Gutiérrez, Daniel Khashabi, Nicholas Andrews"
+  venue: "Arxiv preprint"
+  year: 2026
+  code: "https://github.com/JHU-CLSP/speedrunner"
+  thumb: "better-faster-stronger.gif"
+  tweet: "https://x.com/andrewwnlp/status/2089771876780306582"
+  site: https://jhu-clsp.github.io/speedrunner/
+  selected: true
+  blurb: 
+    "Agents should become more efficient as they gain more task experience. To 
+    that end, we argue that the modality of code is an effective
+    representation of experience. Codifying common behavior into programs
+    avoids calling an LLM to re-reason every step. We show that across models
+    and embodied tasks, our approach decreases cost more than text-based skill
+    memory while matching performance."
+
+- title: "AgentOdyssey: Open-Ended Long-Horizon Text Game Generation for Test-Time Continual Learning Agents"
+  url: "https://arxiv.org/abs/2508.11027"
+  authors: "Zheyuan Zhang, Zehao Wen, Alvin Zhang, <em>Andrew Wang</em>, Jianwen Xie, Daniel Khashabi, Tianmin Shu."
+  venue: "Arxiv preprint"
+  year: 2026
+  code: "https://github.com/agentodyssey/agentodyssey"
+  tweet: "https://x.com/zheyuanzhang99/status/2046292922644242638"
+  site: https://agentodyssey.github.io/
+
+- title: "Hell or High Water: Evaluating Agentic Recovery from External Failures"
+  url: "https://arxiv.org/abs/2508.11027"
+  authors: "<em>Andrew Wang</em>, Sophia Hager, Adi Asija, Daniel Khashabi, Nicholas Andrews."
+  venue: "COLM"
+  year: 2025
+  selected: true
+  blurb: 
+    "How good are agents at coming up with backup plans when the tools they rely
+    on stop working? We create a benchmark where each task is solvable with two
+    different sets of tools, so that one broken tool never makes the task
+    impossible. We find that LLMs struggle in this setting,
+    and more available tools makes their performance even worse."
+  thumb: "tool-use-figure-1.png"
+  tweet: "https://x.com/andrewwnlp/status/1968727859955917019"
+  code: "https://github.com/JHU-CLSP/hell-or-high-water"
+
+- title: "Feedback Friction: LLMs Struggle to Fully Incorporate External Feedback"
+  url: "https://arxiv.org/abs/2506.11930"
+  authors: "Dongwei Jiang, Alvin Zhang, <em>Andrew Wang</em>, Nicholas Andrews, Daniel Khashabi."
+  venue: "NeurIPS"
+  code: "https://github.com/JHU-CLSP/Feedback-Friction"
+  tweet: "https://x.com/Dongwei__Jiang/status/1934626038367363135"
+  year: 2025
+
+- title: "Learning Extrapolative Sequence Transformations from Markov Chains"
+  url: "https://openreview.net/forum?id=DQfHkEcUqV"
+  authors: "Sophia Hager, Aleem Khan, <em>Andrew Wang</em>, Nicholas Andrews."
+  venue: "ICML"
+  year: 2025
+
+- title: "RATIONALYST: Pre-training Process-Supervision for Improving Reasoning"
+  url: "https://arxiv.org/abs/2410.01044"
+  authors: "Dongwei Jiang, Guoxuan Wang, Yining Lu, <em>Andrew Wang</em>, Jingyu Zhang, Chuyu Liu, Benjamin Van Durme, Daniel Khashabi."
+  venue: "ACL (main)"
+  code: "https://github.com/JHU-CLSP/hell-or-high-water"
+  year: 2025
+
+- title: "AnaloBench: Benchmarking the Identification of Abstract and Long-context Analogies"
+  url: "https://arxiv.org/abs/2402.12370"
+  authors: "Xiao Ye,* <em>Andrew Wang</em>,* Jacob Choi, Yining Lu, Shreya Sharma, Lingfeng Shen, Vijay Tiyyala, Nicholas Andrews, Daniel Khashabi."
+  venue: "EMNLP (main)"
+  year: 2024
+  code: "https://github.com/JHU-CLSP/AnaloBench"
+  data: "https://huggingface.co/datasets/jhu-clsp/AnaloBench"
+  tweet: "https://x.com/andrewwnlp/status/1767234121355735294"
+
+- title: "Learning to Generate Text in Arbitrary Writing Styles"
+  url: "https://arxiv.org/abs/2312.17242"
+  authors: "Aleem Khan, <em>Andrew Wang</em>, Sophia Hager, Nicholas Andrews."
+  venue: "Arxiv preprint"
+  year: 2023
+
+- title: "Can Authorship Representation Learning Capture Stylistic Features?"
+  url: "https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00610/118299"
+  authors: "<em>Andrew Wang</em>,* Cristina Aggazzotti,* Rebecca Kotula, Rafael Rivera-Soto, Marcus Bishop, and Nicholas Andrews."
+  venue: "TACL"
+  year: 2023
+  blurb:
+  thumb:
